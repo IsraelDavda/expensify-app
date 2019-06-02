@@ -6,22 +6,20 @@ import Selectexp from '../selectors/expensess';
 export const ExpenseList = (props) => (
     <div>
     {
-        props.expense.length === 0 ? (
-            <p>no expense</p>
+        props.expenses.length === 0 ? (
+            <p>no expenses</p>
         ):(
-            props.expense.map((expense)=>{
+            props.expenses.map((expense)=>{
                 return <ShowAll key={ expense.id} {...expense} />
-
             })
         )
     }
         </div>
-
-        )
+        );
 
 const mapStateToProps = (state) =>{
      return{
-        expense: Selectexp(state.expenses, state.filters)
+        expenses: Selectexp(state.expenses, state.filters)
 
     }}
 

@@ -2,14 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const showAll = ({ id, description, amount, createAt}) => (
+const showAll = ({ id, description, amount, createdAt}) => (
             <div>
             <Link to={`/edit/${id}`}>
-                <h2> {description}</h2>
+                <h3> {description}</h3>
             </Link>
-        <p>with the amount {amount} and createAt{createAt}</p>
+        <p>{amount} - {createAt}</p>
 </div>
-
 );
 
 export default showAll;

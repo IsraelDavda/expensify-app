@@ -9,7 +9,7 @@ import { addExpense } from '../actions/expensess';
         this.props.addExpense(expense);
         this.props.history.push('/');
     };
-    render(){
+    render() {
         return(
             <div>
                 <h1> Add Expense</h1>
@@ -22,9 +22,9 @@ import { addExpense } from '../actions/expensess';
 }
 
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch) => ({
     addExpense: (expense) => dispatch(addExpense(expense))
 })
 
 
-export default connect(null, mapDispatchToProps)(AddExpensePage);
+export default connect(undefined, mapDispatchToProps)(AddExpensePage);

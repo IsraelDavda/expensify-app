@@ -5,35 +5,37 @@ import {setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate} from 
 
 export class ExpenseFiltersList extends React.Component {
     state = {
-        calendarFocused:null
+        calendarFocused: null
     }
-    onDatesChange = ({startDate, endDate}) => {
+    onDatesChange = ({ startDate, endDate }) => {
         this.props.setStartDate(startDate)
         this.props.setEndDate(endDate)
     };
-    onFocuseChange=(calendarFocused)=> {
-        this.setState(()=>({ calendarFocused}))
+    onFocusChange=(calendarFocused)=> {
+        this.setState(() => ({ calendarFocused }))
     }
     onTextChange = (e)=>{
         this.props.setTextFilter(e.target.value);
-        console.log(e.target.value)
-    }
+    };
     onSortChange = (e)=> {
         if (e.target.value === 'date'){
             this.props.sortByDate()
-        }else if(e.target.value === 'amount'){
+        } else if (e.target.value === 'amount'){
            this.props.sortByAmount()
         }
-    }
+    };
     render(){
-      return ( <div>
+      return (
+      <div>
             <input
-             type='text'
+             type="text"
               value={this.props.filters.text}
-                onChange={this.onTextChange}/>
+                onChange={this.onTextChange}
+                />
             <select
              value={this.props.filters.sortBy}
-             onChange={this.onSortChange}>
+             onChange={this.onSortChange}
+             >
                 <option value="date">Date</option>
                 <option value="amount">Amount</option>
             </select>
@@ -42,19 +44,20 @@ export class ExpenseFiltersList extends React.Component {
                 endDate={this.props.filters.endDate}
                 onDatesChange={this.onDatesChange}
                 focusedInput={this.state.calendarFocused}
-                onFocusChange={this.onFocuseChange}
+                onFocusChange={this.onFocusChange}
+                showClearDates={true}
                 numberOfMonths={1}
-                isOutsideRange={()=> false}
+                isOutsideRange={() => false}
             />
         </div>
-        )}}
-
-
-const mapStateTpProps = (state) => {
-    return{
-        filters: state.filters
+        );
     }
-}
+};
+
+
+const mapStateTpProps = (state) => ({
+        filters: state.filters
+})
 
 const mapDispatchToProps = (dispatch) => ({
     setTextFilter: (text) => dispatch(setTextFilter(text)),

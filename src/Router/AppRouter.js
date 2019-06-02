@@ -8,20 +8,14 @@ import HelpPage from '../components/HelpPage';
 import NotFound from '../components/NotFound';
 import Header from '../components/Header';
 
-
-
-
-
-
-
 const AppRouter = () => (
 <BrowserRouter>
     <div>
     <Header />
         <Switch>
             <Route path="/" component={ExpanseDashbordPage} exact />
-            <Route path="/create" component={Create}/>
-            <Route path="/expense" component={AddExpensePage}/>
+            <Route path="/create" component={AddExpensePage}/>
+            {/* <Route path="/expense" component={AddExpensePage}/> */}
             <Route path="/edit/:id" component={EditExpansepage}/>
             <Route path="/help" component={HelpPage}/>
             <Route  component={NotFound}/>
