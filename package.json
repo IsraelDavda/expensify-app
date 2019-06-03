@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "israel",
   "scripts": {
-    "serv": "live-server public/",
+    "serve": "live-server public/",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
     "start": "node server/server.js",
-    "heroku-postbuild":"yarn run build:pord"
+    "heroku-postbuild":"yarn run build:prod"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
