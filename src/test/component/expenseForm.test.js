@@ -12,6 +12,7 @@ test('should render expenseForm with expense data', () => {
     const wrapper = shallow(<ExpenseForm expense={expenses[1]}/>);
     expect(wrapper).toMatchSnapshot();
 });
+
 test('should render error for invalid form submission', () => {
     const wrapper = shallow(<ExpenseForm />);
     wrapper.find('form').simulate('submit', {
@@ -66,7 +67,7 @@ test('should call onSubmit props for valid form submission', () => {
         description: expenses[0].description,
         amount: expenses[0].amount,
         note: expenses[0].note,
-        createAt: expenses[0].createAt
+        createdAt: expenses[0].createdAt
     });
 });
 
@@ -74,11 +75,11 @@ test('should set new date on date change', () => {
     const now = moment();
     const wrapper = shallow(<ExpenseForm />);
     wrapper.find('SingleDatePicker').prop('onDateChange')(now);
-    expect(wrapper.state('createAt')).toEqual(now);
+    expect(wrapper.state('createdAt')).toEqual(now);
 });
 test('should set focused to true', () => {
     const focused = true;
     const wrapper = shallow(<ExpenseForm />);
     wrapper.find('SingleDatePicker').prop('onFocusChange')({ focused });
-    expect(wrapper.state('calenderFocused')).toBe(focused);
+    expect(wrapper.state('calendarFocused')).toBe(focused);
 });

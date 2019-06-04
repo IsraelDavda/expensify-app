@@ -3,7 +3,7 @@
 exports[`should render error for invalid form submission 1`] = `
 <div>
   <p>
-    Please provide description and amount
+    Please provide description and amount.
   </p>
   <form
     onSubmit={[Function]}
@@ -99,7 +99,8 @@ exports[`should render error for invalid form submission 1`] = `
     />
     <textarea
       onChange={[Function]}
-      placeholder="Add a note to a expnese liat (optional)"
+      placeholder="Add a note to a expnese list (optional)"
+      value=""
     />
     <button>
       Add Expense
@@ -204,7 +205,8 @@ exports[`should render expenseForm 1`] = `
     />
     <textarea
       onChange={[Function]}
-      placeholder="Add a note to a expnese liat (optional)"
+      placeholder="Add a note to a expnese list (optional)"
+      value=""
     />
     <button>
       Add Expense
@@ -309,7 +311,8 @@ exports[`should render expenseForm with expense data 1`] = `
     />
     <textarea
       onChange={[Function]}
-      placeholder="Add a note to a expnese liat (optional)"
+      placeholder="Add a note to a expnese list (optional)"
+      value=""
     />
     <button>
       Add Expense

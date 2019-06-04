@@ -5,16 +5,15 @@ exports[`should render expenseListItem currctly 1`] = `
   <Link
     to="/edit/1"
   >
-    <h2>
+    <h3>
        
       Gum
-    </h2>
+    </h3>
   </Link>
   <p>
-    with the amount 
-    195
-     and createAt
-    0
+    $1.95
+    -
+    January 1st, 1970
   </p>
 </div>
 `;
