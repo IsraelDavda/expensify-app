@@ -1,5 +1,5 @@
 
-
+//  1 return destractring 2. reduce
 // 1 challange 1
 // take input and output revrse
 //soltion 1 take the argum string split it to array do on this revers & on this join to join the array
