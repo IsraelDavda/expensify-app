@@ -8,7 +8,7 @@ import {
     editExpense,
     startEditExpense,
     setExpenses,
-    setStartExpenses
+    startSetExpenses
  } from '../../actions/expensess';
 import expenses from '../fixtures/expenses';
 import database from '../../firebase/firebase';
@@ -148,7 +148,7 @@ test('should setup set expense action object with data', () => {
 
 test('should fetch the expenses from firebase', (done) =>{
     const store = createMockStore({});
-    store.dispatch(setStartExpenses()).then(() => {
+    store.dispatch(startSetExpenses()).then(() => {
         const actions = store.getActions();
         expect(actions[0]).toEqual({
             type: 'SET_EXPENSES',
