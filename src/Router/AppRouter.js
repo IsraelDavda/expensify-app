@@ -8,7 +8,7 @@ import AddExpensePage from '../components/addExpensePage';
 import NotFound from '../components/NotFound';
 import Login from '../components/Login';
 import PrivateRoute from './PrivateRoute';
-import PublicRoute from './PublicRoue';
+import PublicRoute from './PublicRoute';
 
 export const history = createHistory();
 
