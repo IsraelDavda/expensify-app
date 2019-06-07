@@ -4,7 +4,7 @@ import moment from 'moment';
 import numeral from 'numeral';
 
 
-const showAll = ({ id, description, amount, createdAt}) => (
+const ExpenseListItem = ({ id, description, amount, createdAt}) => (
             <div>
             <Link to={`/edit/${id}`}>
                 <h3> {description}</h3>
@@ -17,5 +17,5 @@ const showAll = ({ id, description, amount, createdAt}) => (
 </div>
 );
 
-export default showAll;
+export default ExpenseListItem;
 
