@@ -21,7 +21,7 @@ export const addExpense = (expense) => ({
         dispatch(addExpense({
           id: ref.key,
           ...expense
-        }))
+        }));
       });
     };
   };

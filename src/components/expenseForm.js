@@ -62,19 +62,20 @@ if(!this.state.description || !this.state.amount){
 
     render() {
         return (
-            <div>
+        <form className="form" onSubmit={this.onSubmit}>
             {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
                     <input
                     type='text'
                     placeholder='Description'
                     autoFocus
+                    className="text-input"
                     value = {this.state.description}
                     onChange={this.onDescriptionChange}
                     />
                     <input
                         type="text"
                         placeholder='Amount'
+                        className="text-input"
                         value={this.state.amount}
                         onChange={this.onAmountChange}
                     />
@@ -87,14 +88,16 @@ if(!this.state.description || !this.state.amount){
                     isOutsideRange={() => false}
                     />
                     <textarea
-                    placeholder='Add a note to a expnese list (optional)'
+                    placeholder='Add a note for your expense (optional)'
+                    className="textarea"
                     value={this.state.note}
                     onChange={this.onNoteChange}
                     >
                     </textarea>
-                    <button>Add Expense</button>
+                    <div>
+                        <button className="button">Save Expense</button>
+                    </div>
                 </form>
-            </div>
         )
     }
 }

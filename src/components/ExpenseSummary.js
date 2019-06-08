@@ -1,9 +1,6 @@
-// rendering by expense dashbaord
-// connecting to the store for:
-// -expense count (how many expense )visable
-// - expense total (how many total is)
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import numeral from 'numeral';
 import selectExpenses from '../selectors/expensess';
 import selectExpensesTotal from '../selectors/expensesTotal';
@@ -13,14 +10,20 @@ export const ExpensesSummary = ({ expensesCount, expensesTotal }) => {
     const formattedExpensesTotal = numeral(expensesTotal /100).format('$0,0.00');
 
     return (
-        <div>
-            <h1> Viewing {expensesCount} {expenseWord} totalling {formattedExpensesTotal}</h1>
+        <div className="page-header">
+            <div className="content-container">
+                <h1 className="page-header__title">Viewing <span>{expensesCount}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span></h1>
+                <div className="page-header__actions">
+                    <Link className="button" to="/create">Add Expense</Link>
+                </div>
+            </div>
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
     const visibleExpenses = selectExpenses(state.expenses, state.filters);
+
     return{
         expensesCount: visibleExpenses.length,
         expensesTotal: selectExpensesTotal(visibleExpenses)
